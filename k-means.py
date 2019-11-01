@@ -12,7 +12,9 @@ k = args.k
 
 clusters = []
 
-file_reader.readFile()
+plants = file_reader.readFile()
+
+print(plants)
 
 # for i in range(0, k):
 #     clusters[i] = Cluster()
