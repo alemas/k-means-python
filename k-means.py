@@ -20,7 +20,6 @@ for i in range(0, k):
     cluster = Cluster(i)
     cluster.centroid = centroids[i]
     clusters.append(cluster)
-    print(cluster)
 
 isConverging = False
 iterationsLimit = 1000
@@ -32,8 +31,8 @@ while (currentIteration < iterationsLimit and not isConverging):
         cluster.plants = []
 
     for plant in plants:
-        # O primeiro elemento o cluster mais próxima e o segundo
-        # representa a distância para o mesmo
+        # O primeiro elemento representa o cluster mais próxima e o segundo
+        # representa a distância até o centróide do mesmo
         closestCluster = [0, 99999999]
         for cluster in clusters:
             centroid = cluster.centroid
@@ -51,6 +50,12 @@ while (currentIteration < iterationsLimit and not isConverging):
 
     currentIteration += 1
 
+if (isConverging):
+    print("\nParou pois correu convergência")
+else:
+    print("\nParou pois atingiu limite de iterações")
+
 print("Resultados:")
+
 for cluster in clusters:
     cluster.printDetails()
