@@ -29,5 +29,5 @@ class Cluster:
         print("\nCluster número: " + str(self.index))
         content = ""
         for plant in self.plants:
-            content += " " + plant.name
+            content += plant.name + " "
         print(content)

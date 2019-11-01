@@ -51,7 +51,7 @@ while (currentIteration < iterationsLimit and not isConverging):
     currentIteration += 1
 
 if (isConverging):
-    print("\nParou pois correu convergência")
+    print("\nParou pois ocorreu convergência")
 else:
     print("\nParou pois atingiu limite de iterações")
 

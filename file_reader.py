@@ -10,7 +10,7 @@ def readFile():
     for line in lines:
         attributes = line.split(',')
         if (len(attributes) > 1):
-            plant = IrisPlant(float(attributes[0]), float(attributes[1]), float(attributes[2]), float(attributes[3]), attributes[4])
+            plant = IrisPlant(float(attributes[0]), float(attributes[1]), float(attributes[2]), float(attributes[3]), attributes[4].replace('\n', ''))
             plants.append(plant)
 
     return plants

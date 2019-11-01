@@ -23,10 +23,10 @@ class IrisPlant:
                         pow(self.petal_width - plant.petal_width, 2))
 
     def equals(self, plant):
-        return (self.sepal_length == plant.sepal_length and
-                self.sepal_width == plant.sepal_width and
-                self.petal_length == plant.petal_width and
-                self.petal_width == plant.petal_width)
+        return (abs(self.sepal_length - plant.sepal_length) < 0.001 and
+                abs(self.sepal_width - plant.sepal_width) < 0.001 and
+                abs(self.petal_length - plant.petal_length) < 0.001 and
+                abs(self.petal_width - plant.petal_width) < 0.001)
     
     def copy(self):
         return IrisPlant(self.sepal_length, self.sepal_width, self.petal_length, self.petal_width, self.name)
