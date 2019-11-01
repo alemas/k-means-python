@@ -1,7 +1,8 @@
 import argparse
+import random
 import file_reader
-import cluster
-import iris_plant
+from cluster import Cluster
+from iris_plant import IrisPlant
 
 parser = argparse.ArgumentParser()
 parser.add_argument('k', metavar='k', type=int,
@@ -11,10 +12,16 @@ args = parser.parse_args()
 k = args.k
 
 clusters = []
-
 plants = file_reader.readFile()
+centroids = random.sample(plants, k)
 
-print(plants)
+for i in range(0, k):
+    cluster = Cluster(i)
+    cluster.centroid = centroids[i]
+    clusters.append(cluster)
+    print(cluster)
 
-# for i in range(0, k):
-#     clusters[i] = Cluster()
+for cluster in clusters:
+    centroid = cluster.centroid
+    for plant in plants:
+        
